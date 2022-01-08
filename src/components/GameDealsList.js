@@ -9,9 +9,14 @@ const GameDealsList = ({gameDeals}) => {
 
     return (
         <div>
-            <ul>
+            <table>
+            <tr>
+                <th>Title</th>
+                <th>Normal Price</th>
+                <th>Sale Price</th>
+            </tr>
                 {gameDealsItems}
-            </ul>
+            </table>
         </div>
     )
 }

@@ -3,9 +3,13 @@ import React from 'react';
 const ListItem = ({deal}) => {
     
     return (
-        <div>
-            <li>{deal.title}</li>
-        </div>
+        <>
+            <tr>
+            <td>{deal.title}</td>
+            <td>{deal.normalPrice}</td>
+            <td>{deal.salePrice}</td>
+            </tr>
+        </>
     )
 
 }

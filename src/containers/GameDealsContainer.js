@@ -1,28 +1,37 @@
 import React, {useState, useEffect} from 'react';
 import GameDealsList from '../components/GameDealsList';
+import GameDealsSearchForm from '../components/GameDealsSearchForm';
 
 const GameDealsContainer = () => {
     const [gameDeals, setGameDeals] = useState([])
+    const [titleSearch, settitleSearch] = useState("")
 
     useEffect(() => {
-        getDeals(wholeUrl);
-    },[])
+        getDeals();
+    }, [titleSearch])
 
-    const searchTerm = "mass effect"
     const url = "https://www.cheapshark.com/api/1.0/deals?title="
-    let wholeUrl = url + searchTerm
+    let wholeUrl = url + titleSearch
     console.log(wholeUrl)
     
 
-    const getDeals = (wholeUrl) => {
+    const getDeals = () => {
         console.log(wholeUrl);
         fetch(wholeUrl)
         .then(result => result.json())
         .then(deals => setGameDeals(deals))
     }
+    const onTitleSearch = (searchTerm) => {
+        settitleSearch(searchTerm)
+        console.log(titleSearch)
+    }
 
     return (
-        <GameDealsList gameDeals={gameDeals}/>
+        <>
+        <GameDealsSearchForm onTitleSearch={onTitleSearch}/>
+        {gameDeals ? <GameDealsList gameDeals={gameDeals}/>
+        :null}
+        </>
     )
 
 }
