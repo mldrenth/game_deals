@@ -30,7 +30,9 @@ const GameDealsContainer = () => {
     }
 
     const onDealClick = (deal) => {
-        setChosenGame(deal) 
+        fetch("https://www.cheapshark.com/api/1.0/games?id=" + deal.gameID)
+        .then(result => result.json()
+        .then(game => setChosenGame(game)))
     }
 
     return (
