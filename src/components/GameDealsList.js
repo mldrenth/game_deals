@@ -1,10 +1,10 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-const GameDealsList = ({gameDeals}) => {
+const GameDealsList = ({gameDeals, onDealClick}) => {
     
     const gameDealsItems = gameDeals.map((deal, index) => {
-        return <ListItem deal={deal} key={index} />
+        return <ListItem deal={deal} key={index} onDealClick={onDealClick} />
     })
 
     return (
@@ -14,6 +14,7 @@ const GameDealsList = ({gameDeals}) => {
                 <th>Title</th>
                 <th>Normal Price</th>
                 <th>Sale Price</th>
+                <th>More Info</th>
             </tr>
                 {gameDealsItems}
             </table>

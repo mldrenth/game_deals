@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import GameDealsList from '../components/GameDealsList';
 import GameDealsSearchForm from '../components/GameDealsSearchForm';
+import GameInfo from '../components/GameInfo';
+import './GameDealsContainer.css'
 
 const GameDealsContainer = () => {
     const [gameDeals, setGameDeals] = useState([])
     const [titleSearch, settitleSearch] = useState("")
+    const [chosenGame, setChosenGame] = useState(null)
 
     useEffect(() => {
         getDeals();
@@ -26,11 +29,19 @@ const GameDealsContainer = () => {
         console.log(titleSearch)
     }
 
+    const onDealClick = (deal) => {
+        setChosenGame(deal) 
+    }
+
     return (
         <>
         <GameDealsSearchForm onTitleSearch={onTitleSearch}/>
-        {gameDeals ? <GameDealsList gameDeals={gameDeals}/>
-        :null}
+        <div id="games-container">
+        {gameDeals ? <GameDealsList gameDeals={gameDeals} onDealClick={onDealClick}/>
+        : null}
+        {chosenGame ? <GameInfo chosenGame={chosenGame}/>
+        : null}Ï
+        </div>
         </>
     )
 

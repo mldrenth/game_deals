@@ -1,13 +1,18 @@
 import React from 'react';
 
-const ListItem = ({deal}) => {
+const ListItem = ({deal, onDealClick}) => {
+
+    const handleClick = () => {
+        onDealClick(deal);
+    }
     
     return (
         <>
-            <tr>
+            < tr>
             <td>{deal.title}</td>
             <td>{deal.normalPrice}</td>
             <td>{deal.salePrice}</td>
+            <td onClick={handleClick}>More Info</td>
             </tr>
         </>
     )
