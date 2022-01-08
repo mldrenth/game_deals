@@ -1,5 +1,6 @@
 import React from 'react';
 import DealItem from './DealItem';
+import GameChart from './GameChart';
 
 const GameInfoDealsTable = ({chosenGame}) => {
 
@@ -8,8 +9,8 @@ const GameInfoDealsTable = ({chosenGame}) => {
     })
     
     return (
-        <div>
-            <table>
+        <div width="100vw">
+            <table width="100%">
             <tr>
                 <th>Store</th>
                 <th>Normal Price</th>
@@ -18,6 +19,7 @@ const GameInfoDealsTable = ({chosenGame}) => {
             </tr>
                 {gameDealsItems}
             </table>
+            <GameChart deals={chosenGame.deals}/>
         </div>
     )
 }

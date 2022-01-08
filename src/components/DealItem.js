@@ -1,6 +1,8 @@
 import React from 'react'
+import GameChart from './GameChart'
 
 const DealItem = ({deal}) => {
+
 
     return (
     <>
@@ -10,6 +12,7 @@ const DealItem = ({deal}) => {
             <td>{deal.price}</td>
             <td><a href={`https://www.cheapshark.com/redirect?dealID=${deal.dealID}`}>See Deal</a></td>
             </tr>
+            
         </>
     )
 
