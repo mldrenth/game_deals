@@ -9,15 +9,18 @@ const GameInfoDealsTable = ({chosenGame}) => {
     })
     
     return (
-        <div width="100vw">
-            <table width="100%">
+        <div >
+            <table className='min-w-full divide-y divide-orange-200 border-solid border-2 border-orange-200'>
+                <thead className='bg-orange-50'>
             <tr>
-                <th>Store</th>
-                <th>Normal Price</th>
-                <th>Sale Price</th>
-                <th>Get the Deal</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-orange-500 uppercase tracking-wider">Store</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-orange-500 uppercase tracking-wider">Sale Price</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-orange-500 uppercase tracking-wider">Get the Deal</th>
             </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-orange-200">
                 {gameDealsItems}
+                </tbody>
             </table>
             <GameChart deals={chosenGame.deals}/>
         </div>

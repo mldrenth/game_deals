@@ -36,15 +36,15 @@ const GameDealsContainer = () => {
     }
 
     return (
-        <>
+        <div className='bg-slate-50'>
         <GameDealsSearchForm onTitleSearch={onTitleSearch}/>
-        <div id="games-container">
+        <div className="mx-5"id="games-container">
         {gameDeals ? <GameDealsList gameDeals={gameDeals} onDealClick={onDealClick}/>
         : null}
         {chosenGame ? <GameInfo chosenGame={chosenGame}/>
         : null}Ï
         </div>
-        </>
+        </div>
     )
 
 }

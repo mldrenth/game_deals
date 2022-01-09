@@ -9,14 +9,18 @@ const GameDealsList = ({gameDeals, onDealClick}) => {
 
     return (
         <div>
-            <table>
+            <table className="min-w-full divide-y divide-orange-200 border-solid border-2 border-orange-200">
+                <thead className="bg-orange-50">
             <tr>
-                <th>Title</th>
-                <th>Normal Price</th>
-                <th>Sale Price</th>
-                <th>More Info</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-orange-500 uppercase tracking-wider">Title</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-orange-500 uppercase tracking-wider">Normal Price</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-orange-500 uppercase tracking-wider">Sale Price</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-orange-500 uppercase tracking-wider">More Info</th>
             </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-orange-200">
                 {gameDealsItems}
+                </tbody>
             </table>
         </div>
     )
